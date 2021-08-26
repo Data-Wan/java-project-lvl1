@@ -10,7 +10,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Run linter
-        run:
-          make lint
+      - uses: actions/checkout@v2
+      - name: Set up openJDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: '15'
+      - name: Build with Gradle
+        run: make build

@@ -33,6 +33,8 @@ application {
     // Define the main class for the application.
 //    mainClass = 'java.project.lvl1.App'
     mainClass = 'hexlet.code.BrainGames'
+    project.buildDir = 'bin/brain-games'
+
 
 }
 

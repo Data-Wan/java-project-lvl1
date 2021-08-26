@@ -26,9 +26,12 @@ public abstract class Game {
      * Instantiates a new Game.
      *
      * @param playerName the player name
+     * @param rules the rules of Game.
      */
-    public Game(final String playerName) {
+    public Game(final String playerName, final String rules) {
         this.playerName = playerName;
+        this.question = "Question: %s%n";
+        this.rules = rules;
     }
 
     /**
@@ -104,15 +107,6 @@ public abstract class Game {
      */
     protected void setRules(final String rules) {
         this.rules = rules;
-    }
-
-    /**
-     * Sets question.
-     *
-     * @param question the question
-     */
-    protected void setQuestion(final String question) {
-        this.question = question;
     }
 
     /**

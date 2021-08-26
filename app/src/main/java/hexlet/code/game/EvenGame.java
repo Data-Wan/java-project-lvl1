@@ -4,10 +4,10 @@ import java.util.Random;
 
 public final class EvenGame extends Game {
 
+    private static final String rules = "Answer 'yes' if number even otherwise answer 'no'.";
+
     public EvenGame(String playerName) {
-        super(playerName);
-        this.setRules("Answer 'yes' if number even otherwise answer 'no'.");
-        this.setQuestion("Question: %s%n");
+        super(playerName, rules);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
 import hexlet.code.game.Game;
 
@@ -28,6 +29,11 @@ public final class App {
                 game = new EvenGame(playerName);
                 game.play();
                 break;
+            case 3:
+                startApp();
+                game = new CalculatorGame(playerName);
+                game.play();
+                break;
             default:
                 System.out.println("Incorrect option, restart application");
         }
@@ -54,8 +60,9 @@ public final class App {
     public static int chooseOptionFromMenu() {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println(Options.GREET);
-        System.out.println(Options.EXIT);
         System.out.println(Options.EVEN_GAME);
+        System.out.println(Options.CALCULATOR_GAME);
+        System.out.println(Options.EXIT);
 
         System.out.print("Your choice: ");
         Scanner scanner = new Scanner(System.in);
@@ -70,5 +77,7 @@ final class Options {
 
     public static final String GREET = "1 - Greet";
 
-    public static final String EVEN_GAME = "2 - EVEN";
+    public static final String EVEN_GAME = "2 - Even";
+
+    public static final String CALCULATOR_GAME = "3 - Calc";
 }

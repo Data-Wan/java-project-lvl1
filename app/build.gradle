@@ -29,11 +29,15 @@ application {
     group = 'hexlet.hexlet.code'
     version = '1.0-SNAPSHOT'
     // Define the main class for the application.
-    mainClass = 'java.project.lvl1.App'
-
+//    mainClass = 'java.project.lvl1.App'
+    mainClass = 'hexlet.code.App'
 }
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+compileJava {
+    options.release = 15
 }

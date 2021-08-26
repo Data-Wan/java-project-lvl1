@@ -8,6 +8,8 @@ import java.util.Scanner;
  */
 public abstract class Game {
 
+    private final int rightAnswersForWin = 3;
+
     private String rules;
 
     private String question;
@@ -17,8 +19,6 @@ public abstract class Game {
     private String rightAnswer;
 
     private String userAnswer;
-
-    private final int rightAnswersForWin = 3;
 
     private String questionData;
 
@@ -32,34 +32,6 @@ public abstract class Game {
         this.playerName = playerName;
         this.question = "Question: %s%n";
         this.rules = rules;
-    }
-
-    /**
-     * Print rules.
-     */
-    protected void printRules() {
-        System.out.println(this.rules);
-    }
-
-    /**
-     * Print question.
-     */
-    protected void printQuestion() {
-        System.out.printf(this.question, questionData);
-    }
-
-    /**
-     * Print lose message.
-     */
-    protected void printLoseMessage() {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", this.userAnswer, this.rightAnswer);
-    }
-
-    /**
-     * Print win message.
-     */
-    protected void printWinMessage() {
-        System.out.printf("Congratulations, %s!%n", this.playerName);
     }
 
     /**
@@ -88,6 +60,25 @@ public abstract class Game {
     }
 
     /**
+     * Print rules.
+     */
+    protected void printRules() {
+        System.out.println(this.rules);
+    }
+
+    /**
+     * Generate right answer.
+     */
+    protected abstract void generateRightAnswer();
+
+    /**
+     * Print question.
+     */
+    protected void printQuestion() {
+        System.out.printf(this.question, questionData);
+    }
+
+    /**
      * Gets user answer.
      */
     protected void getUserAnswer() {
@@ -96,9 +87,18 @@ public abstract class Game {
     }
 
     /**
-     * Generate right answer.
+     * Print lose message.
      */
-    protected abstract void generateRightAnswer();
+    protected void printLoseMessage() {
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", this.userAnswer, this.rightAnswer);
+    }
+
+    /**
+     * Print win message.
+     */
+    protected void printWinMessage() {
+        System.out.printf("Congratulations, %s!%n", this.playerName);
+    }
 
     /**
      * Sets rules.

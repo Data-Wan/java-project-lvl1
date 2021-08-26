@@ -4,9 +4,31 @@ import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
 import hexlet.code.game.GCDGame;
 import hexlet.code.game.Game;
+import hexlet.code.game.PrimeGame;
 import hexlet.code.game.ProgressionGame;
 
 import java.util.Scanner;
+
+enum Options {
+    EXIT("0 - Exit"),
+    GREET("1 - Greet"),
+    EVEN_GAME("2 - Even"),
+    CALCULATOR_GAME("3 - Calc"),
+    GCD_GAME("4 - GCD"),
+    PROGRESSION_GAME("5 - Progression"),
+    PRIME_GAME("6 - Prime");
+
+    private final String stringRepresentation;
+
+    Options(final String string) {
+        this.stringRepresentation = string;
+    }
+
+    @Override
+    public String toString() {
+        return stringRepresentation;
+    }
+}
 
 public final class App {
 
@@ -46,9 +68,33 @@ public final class App {
                 game = new ProgressionGame(playerName);
                 game.play();
                 break;
+            case PRIME_GAME:
+                startApp();
+                game = new PrimeGame(playerName);
+                game.play();
+                break;
             default:
                 System.out.println("Incorrect option, restart application");
         }
+    }
+
+    public static int chooseOptionFromMenu() {
+        System.out.println("Please enter the game number and press Enter.");
+
+        System.out.println(Options.GREET);
+
+        System.out.println(Options.EVEN_GAME);
+        System.out.println(Options.CALCULATOR_GAME);
+        System.out.println(Options.GCD_GAME);
+        System.out.println(Options.PROGRESSION_GAME);
+        System.out.println(Options.PRIME_GAME);
+
+        System.out.println(Options.EXIT);
+
+        System.out.print("Your choice: ");
+        Scanner scanner = new Scanner(System.in);
+
+        return scanner.nextInt();
     }
 
     private static void startApp() {
@@ -67,43 +113,5 @@ public final class App {
 
     public String getWelcomeMessage() {
         return WELCOME_MESSAGE;
-    }
-
-    public static int chooseOptionFromMenu() {
-        System.out.println("Please enter the game number and press Enter.");
-
-        System.out.println(Options.GREET);
-
-        System.out.println(Options.EVEN_GAME);
-        System.out.println(Options.CALCULATOR_GAME);
-        System.out.println(Options.GCD_GAME);
-        System.out.println(Options.PROGRESSION_GAME);
-
-        System.out.println(Options.EXIT);
-
-        System.out.print("Your choice: ");
-        Scanner scanner = new Scanner(System.in);
-
-        return scanner.nextInt();
-    }
-}
-
-enum Options {
-    EXIT("0 - Exit"),
-    GREET("1 - Greet"),
-    EVEN_GAME("2 - Even"),
-    CALCULATOR_GAME("3 - Calc"),
-    GCD_GAME("4 - GCD"),
-    PROGRESSION_GAME("5 - Progression");
-
-    private final String stringRepresentation;
-
-    Options(final String string) {
-        this.stringRepresentation = string;
-    }
-
-    @Override
-    public String toString() {
-        return stringRepresentation;
     }
 }

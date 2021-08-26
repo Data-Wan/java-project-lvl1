@@ -6,6 +6,8 @@ public final class CalculatorGame extends Game {
 
     private static final String RULES = "What is the result of the expression?";
 
+    private final String[] operators = new String[]{"+", "-", "*"};
+
     public CalculatorGame(final String playerName) {
         super(playerName, RULES);
     }
@@ -32,6 +34,4 @@ public final class CalculatorGame extends Game {
 
         this.setQuestionData(String.format("%d %s %d", number1, operator, number2));
     }
-
-    private final String[] operators = new String[]{"+", "-", "*"};
 }

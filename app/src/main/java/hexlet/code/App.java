@@ -4,6 +4,7 @@ import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
 import hexlet.code.game.GCDGame;
 import hexlet.code.game.Game;
+import hexlet.code.game.ProgressionGame;
 
 import java.util.Scanner;
 
@@ -40,6 +41,11 @@ public final class App {
                 game = new GCDGame(playerName);
                 game.play();
                 break;
+            case PROGRESSION_GAME:
+                startApp();
+                game = new ProgressionGame(playerName);
+                game.play();
+                break;
             default:
                 System.out.println("Incorrect option, restart application");
         }
@@ -71,6 +77,7 @@ public final class App {
         System.out.println(Options.EVEN_GAME);
         System.out.println(Options.CALCULATOR_GAME);
         System.out.println(Options.GCD_GAME);
+        System.out.println(Options.PROGRESSION_GAME);
 
         System.out.println(Options.EXIT);
 
@@ -86,7 +93,8 @@ enum Options {
     GREET("1 - Greet"),
     EVEN_GAME("2 - Even"),
     CALCULATOR_GAME("3 - Calc"),
-    GCD_GAME("4 - GCD");
+    GCD_GAME("4 - GCD"),
+    PROGRESSION_GAME("5 - Progression");
 
     private final String stringRepresentation;
 

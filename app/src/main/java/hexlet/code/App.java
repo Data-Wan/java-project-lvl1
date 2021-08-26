@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
+import hexlet.code.game.GCDGame;
 import hexlet.code.game.Game;
 
 import java.util.Scanner;
@@ -14,24 +15,29 @@ public final class App {
 
     public static void main(String[] args) {
 
-        final int optionFromMenu = chooseOptionFromMenu();
+        final Options optionFromMenu = Options.values()[chooseOptionFromMenu()];
 
         Game game;
 
         switch (optionFromMenu) {
-            case 0:
+            case EXIT:
                 return;
-            case 1:
+            case GREET:
                 startApp();
                 break;
-            case 2:
+            case EVEN_GAME:
                 startApp();
                 game = new EvenGame(playerName);
                 game.play();
                 break;
-            case 3:
+            case CALCULATOR_GAME:
                 startApp();
                 game = new CalculatorGame(playerName);
+                game.play();
+                break;
+            case GCD_GAME:
+                startApp();
+                game = new GCDGame(playerName);
                 game.play();
                 break;
             default:
@@ -59,9 +65,13 @@ public final class App {
 
     public static int chooseOptionFromMenu() {
         System.out.println("Please enter the game number and press Enter.");
+
         System.out.println(Options.GREET);
+
         System.out.println(Options.EVEN_GAME);
         System.out.println(Options.CALCULATOR_GAME);
+        System.out.println(Options.GCD_GAME);
+
         System.out.println(Options.EXIT);
 
         System.out.print("Your choice: ");
@@ -71,13 +81,21 @@ public final class App {
     }
 }
 
-final class Options {
+enum Options {
+    EXIT("0 - Exit"),
+    GREET("1 - Greet"),
+    EVEN_GAME("2 - Even"),
+    CALCULATOR_GAME("3 - Calc"),
+    GCD_GAME("4 - GCD");
 
-    public static final String EXIT = "0 - Exit";
+    private final String stringRepresentation;
 
-    public static final String GREET = "1 - Greet";
+    Options(final String string) {
+        this.stringRepresentation = string;
+    }
 
-    public static final String EVEN_GAME = "2 - Even";
-
-    public static final String CALCULATOR_GAME = "3 - Calc";
+    @Override
+    public String toString() {
+        return stringRepresentation;
+    }
 }

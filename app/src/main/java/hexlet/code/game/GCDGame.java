@@ -14,8 +14,9 @@ public final class GCDGame extends Game {
     protected void generateRightAnswer() {
         Random random = new Random();
 
-        var number1 = random.nextInt();
-        var number2 = random.nextInt();
+        final int upperBoundExclusive = 20;
+        var number1 = random.nextInt(upperBoundExclusive);
+        var number2 = random.nextInt(upperBoundExclusive);
 
         this.setRightAnswer(String.valueOf(gcdByEuclidsAlgorithm(number1, number2)));
 

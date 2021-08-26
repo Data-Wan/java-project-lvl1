@@ -27,13 +27,11 @@ dependencies {
 }
 
 application {
-    setApplicationName('brain-games')
     group = 'hexlet.hexlet.code'
     version = '1.0-SNAPSHOT'
     // Define the main class for the application.
 //    mainClass = 'java.project.lvl1.App'
-    mainClass = 'hexlet.code.BrainGames'
-    project.buildDir = 'bin/brain-games'
+    mainClass = 'hexlet.code.App'
 
 
 }
@@ -44,7 +42,7 @@ tasks.named('test') {
 }
 
 compileJava {
-    options.release = 15
+    options.release.set(15)
 }
 
 run {

@@ -18,4 +18,7 @@ lint:
 build:
 	./gradlew clean build
 
+clean:
+	./gradlew clean
+
 .PHONY: run check-updates run-dist install lint build

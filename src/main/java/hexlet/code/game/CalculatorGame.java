@@ -22,16 +22,16 @@ public final class CalculatorGame extends Game {
 
     @Override
     protected void generateRightAnswer() {
-        Random random = new Random();
+        final Random random = new Random();
 
         final int upperBoundExclusive = 10;
 
-        var number1 = random.nextInt(upperBoundExclusive);
-        var number2 = random.nextInt(upperBoundExclusive);
+        final var number1 = random.nextInt(upperBoundExclusive);
+        final var number2 = random.nextInt(upperBoundExclusive);
 
-        var indexOfOperator = random.nextInt(operators.length);
+        final var indexOfOperator = random.nextInt(operators.length);
 
-        var operator = operators[indexOfOperator];
+        final var operator = operators[indexOfOperator];
 
         switch (operator) {
             case "+" -> this.setRightAnswer(String.valueOf(number1 + number2));

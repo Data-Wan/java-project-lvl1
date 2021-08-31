@@ -22,30 +22,30 @@ public final class ProgressionGame extends Game {
 
     @Override
     protected void generateRightAnswer() {
-        Random random = new Random();
+        final Random random = new Random();
 
         final int lowerBoundInclusive = 5;
         final int upperBoundExclusive = 11;
-        var progressionLength = random.nextInt(upperBoundExclusive) + lowerBoundInclusive;
+        final var progressionLength = random.nextInt(upperBoundExclusive) + lowerBoundInclusive;
 
-        List<String> numberSequence = new ArrayList<>();
+        final List<String> numberSequence = new ArrayList<>();
 
         final int upperBoundExclusiveForFirstNumber = 10;
-        var firstNumberInSequence = random.nextInt(upperBoundExclusiveForFirstNumber);
+        final var firstNumberInSequence = random.nextInt(upperBoundExclusiveForFirstNumber);
 
         final int upperBoundExclusiveForProgressionStep = 10;
-        var progressionStep = random.nextInt(upperBoundExclusiveForProgressionStep);
+        final var progressionStep = random.nextInt(upperBoundExclusiveForProgressionStep);
 
         for (int i = 0; i < progressionLength; i++) {
             numberSequence.add(String.valueOf(firstNumberInSequence + progressionStep * i));
         }
 
-        var indexOfDeletedNumber = random.nextInt(numberSequence.size());
-        var deletedNumber = numberSequence.get(indexOfDeletedNumber);
+        final var indexOfDeletedNumber = random.nextInt(numberSequence.size());
+        final var deletedNumber = numberSequence.get(indexOfDeletedNumber);
         numberSequence.set(indexOfDeletedNumber, "..");
         this.setRightAnswer(deletedNumber);
 
-        var numberSequenceToStringWithoutDeletedNumber = String.join(" ", numberSequence);
+        final var numberSequenceToStringWithoutDeletedNumber = String.join(" ", numberSequence);
 
         this.setQuestionData(numberSequenceToStringWithoutDeletedNumber);
     }

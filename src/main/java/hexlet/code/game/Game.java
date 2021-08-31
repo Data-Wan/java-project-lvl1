@@ -83,7 +83,7 @@ public abstract class Game {
      * Gets user answer.
      */
     protected void getUserAnswer() {
-        Scanner scanner = new Scanner(System.in);
+        final Scanner scanner = new Scanner(System.in);
         this.userAnswer = scanner.nextLine().trim();
     }
 

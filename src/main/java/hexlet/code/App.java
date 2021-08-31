@@ -27,7 +27,7 @@ public final class App {
 
         final Options optionFromMenu = Options.values()[chooseOptionFromMenu()];
 
-        Game game;
+        final Game game;
 
         switch (optionFromMenu) {
             case EXIT:
@@ -84,7 +84,7 @@ public final class App {
         System.out.println(Options.EXIT);
 
         System.out.print("Your choice: ");
-        Scanner scanner = new Scanner(System.in);
+        final Scanner scanner = new Scanner(System.in);
 
         return scanner.nextInt();
     }

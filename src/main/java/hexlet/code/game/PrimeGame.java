@@ -20,10 +20,10 @@ public final class PrimeGame extends Game {
 
     @Override
     protected void generateRightAnswer() {
-        Random random = new Random();
+        final Random random = new Random();
 
         final int upperBoundExclusive = 100;
-        var number = random.nextInt(upperBoundExclusive);
+        final var number = random.nextInt(upperBoundExclusive);
 
         this.setQuestionData(String.valueOf(number));
 

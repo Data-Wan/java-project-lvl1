@@ -9,32 +9,7 @@ import hexlet.code.game.ProgressionGame;
 
 import java.util.Scanner;
 
-enum Options {
-    EXIT("0 - Exit"),
-    GREET("1 - Greet"),
-    EVEN_GAME("2 - Even"),
-    CALCULATOR_GAME("3 - Calc"),
-    GCD_GAME("4 - GCD"),
-    PROGRESSION_GAME("5 - Progression"),
-    PRIME_GAME("6 - Prime");
-
-    private final String stringRepresentation;
-
-    Options(final String string) {
-        this.stringRepresentation = string;
-    }
-
-    @Override
-    public String toString() {
-        return stringRepresentation;
-    }
-}
-
-public final class App {
-
-    private static final String WELCOME_MESSAGE = "Welcome to the Brain Games!";
-
-    private static String playerName;
+public class App {
 
     public static void main(String[] args) {
 
@@ -78,6 +53,10 @@ public final class App {
         }
     }
 
+    private static final String WELCOME_MESSAGE = "Welcome to the Brain Games!";
+
+    private static String playerName;
+
     public static int chooseOptionFromMenu() {
         System.out.println("Please enter the game number and press Enter.");
 
@@ -113,5 +92,26 @@ public final class App {
 
     public String getWelcomeMessage() {
         return WELCOME_MESSAGE;
+    }
+
+    enum Options {
+        EXIT("0 - Exit"),
+        GREET("1 - Greet"),
+        EVEN_GAME("2 - Even"),
+        CALCULATOR_GAME("3 - Calc"),
+        GCD_GAME("4 - GCD"),
+        PROGRESSION_GAME("5 - Progression"),
+        PRIME_GAME("6 - Prime");
+
+        private final String stringRepresentation;
+
+        Options(final String string) {
+            this.stringRepresentation = string;
+        }
+
+        @Override
+        public String toString() {
+            return stringRepresentation;
+        }
     }
 }

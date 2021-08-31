@@ -2,10 +2,18 @@ package hexlet.code.game;
 
 import java.util.Random;
 
+/**
+ * The type Prime game.
+ */
 public final class PrimeGame extends Game {
 
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
+    /**
+     * Instantiates a new Prime game.
+     *
+     * @param playerName the player name
+     */
     public PrimeGame(final String playerName) {
         super(playerName, RULES);
     }

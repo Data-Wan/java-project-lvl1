@@ -9,9 +9,21 @@ import hexlet.code.game.ProgressionGame;
 
 import java.util.Scanner;
 
+/**
+ * The type App.
+ */
 public final class App {
 
-    public static void main(String[] args) {
+    private static final String WELCOME_MESSAGE = "Welcome to the Brain Games!";
+
+    private static String playerName;
+
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(final String[] args) {
 
         final Options optionFromMenu = Options.values()[chooseOptionFromMenu()];
 
@@ -53,10 +65,11 @@ public final class App {
         }
     }
 
-    private static final String WELCOME_MESSAGE = "Welcome to the Brain Games!";
-
-    private static String playerName;
-
+    /**
+     * Choose option from menu int.
+     *
+     * @return the int
+     */
     public static int chooseOptionFromMenu() {
         System.out.println("Please enter the game number and press Enter.");
 
@@ -90,17 +103,46 @@ public final class App {
         System.out.printf("Hello, %s!%n", name);
     }
 
+    /**
+     * Gets welcome message.
+     *
+     * @return the welcome message
+     */
     public String getWelcomeMessage() {
         return WELCOME_MESSAGE;
     }
 
+    /**
+     * The enum Options.
+     */
     enum Options {
+        /**
+         *Exit options.
+         */
         EXIT("0 - Exit"),
+        /**
+         *Greet options.
+         */
         GREET("1 - Greet"),
+        /**
+         *Even game options.
+         */
         EVEN_GAME("2 - Even"),
+        /**
+         *Calculator game options.
+         */
         CALCULATOR_GAME("3 - Calc"),
+        /**
+         *Gcd game options.
+         */
         GCD_GAME("4 - GCD"),
+        /**
+         *Progression game options.
+         */
         PROGRESSION_GAME("5 - Progression"),
+        /**
+         *Prime game options.
+         */
         PRIME_GAME("6 - Prime");
 
         private final String stringRepresentation;

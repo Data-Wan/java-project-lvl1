@@ -2,12 +2,20 @@ package hexlet.code.game;
 
 import java.util.Random;
 
+/**
+ * The type Calculator game.
+ */
 public final class CalculatorGame extends Game {
 
     private static final String RULES = "What is the result of the expression?";
 
     private final String[] operators = new String[]{"+", "-", "*"};
 
+    /**
+     * Instantiates a new Calculator game.
+     *
+     * @param playerName the player name
+     */
     public CalculatorGame(final String playerName) {
         super(playerName, RULES);
     }

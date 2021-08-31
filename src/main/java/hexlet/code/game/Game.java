@@ -10,11 +10,11 @@ public abstract class Game {
 
     private final int rightAnswersForWin = 3;
 
-    private String rules;
+    private final String question;
 
-    private String question;
+    private final String playerName;
 
-    private String playerName;
+    private String gameRules;
 
     private String rightAnswer;
 
@@ -25,13 +25,13 @@ public abstract class Game {
     /**
      * Instantiates a new Game.
      *
-     * @param playerName the player name
+     * @param name the player name
      * @param rules the rules of Game.
      */
-    public Game(final String playerName, final String rules) {
-        this.playerName = playerName;
+    protected Game(final String name, final String rules) {
+        this.playerName = name;
         this.question = "Question: %s%n";
-        this.rules = rules;
+        this.gameRules = rules;
     }
 
     /**
@@ -61,18 +61,10 @@ public abstract class Game {
     }
 
     /**
-     *
-     * @param playerName the player name
-     */
-    private void printLetsTryAgainMessage(final String playerName) {
-        System.out.printf("Let's try again, %s!%n", playerName);
-    }
-
-    /**
      * Print rules.
      */
     protected void printRules() {
-        System.out.println(this.rules);
+        System.out.println(this.gameRules);
     }
 
     /**
@@ -103,6 +95,14 @@ public abstract class Game {
     }
 
     /**
+     *
+     * @param name the player name
+     */
+    private void printLetsTryAgainMessage(final String name) {
+        System.out.printf("Let's try again, %s!%n", name);
+    }
+
+    /**
      * Print win message.
      */
     protected void printWinMessage() {
@@ -114,25 +114,25 @@ public abstract class Game {
      *
      * @param rules the rules
      */
-    protected void setRules(final String rules) {
-        this.rules = rules;
+    protected void setGameRules(final String rules) {
+        this.gameRules = rules;
     }
 
     /**
      * Sets right answer.
      *
-     * @param rightAnswer the right answer
+     * @param answer the right answer
      */
-    protected void setRightAnswer(final String rightAnswer) {
-        this.rightAnswer = rightAnswer;
+    protected void setRightAnswer(final String answer) {
+        this.rightAnswer = answer;
     }
 
     /**
      * Sets question data.
      *
-     * @param questionData the question data
+     * @param data the question data
      */
-    protected void setQuestionData(final String questionData) {
-        this.questionData = questionData;
+    protected void setQuestionData(final String data) {
+        this.questionData = data;
     }
 }

@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * The type Progression game.
+ */
 public final class ProgressionGame extends Game {
 
     private static final String RULES = "What number is missing in the progression?";
 
+    /**
+     * Instantiates a new Progression game.
+     *
+     * @param playerName the player name
+     */
     public ProgressionGame(final String playerName) {
         super(playerName, RULES);
     }

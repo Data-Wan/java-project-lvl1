@@ -30,7 +30,6 @@ application {
     group = 'hexlet.code'
     version = '1.0-SNAPSHOT'
     // Define the main class for the application.
-//    mainClass = 'java.project.lvl1.App'
     mainClass = 'hexlet.code.App'
 
     setApplicationName("app")

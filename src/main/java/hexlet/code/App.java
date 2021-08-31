@@ -9,7 +9,7 @@ import hexlet.code.game.ProgressionGame;
 
 import java.util.Scanner;
 
-public class App {
+public final class App {
 
     public static void main(String[] args) {
 

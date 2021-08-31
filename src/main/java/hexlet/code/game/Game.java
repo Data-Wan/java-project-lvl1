@@ -53,10 +53,19 @@ public abstract class Game {
                 System.out.println("Correct!");
             } else {
                 printLoseMessage();
+                printLetsTryAgainMessage(this.playerName);
                 return;
             }
         }
         printWinMessage();
+    }
+
+    /**
+     *
+     * @param playerName the player name
+     */
+    private void printLetsTryAgainMessage(final String playerName) {
+        System.out.printf("Let's try again, %s!%n", playerName);
     }
 
     /**
